@@ -8,78 +8,73 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
      /*                                                        header                                                  */
- /* Header Section */
-.website-header {
-  background-color: #0b0d23;
-  color: #fff;
-  padding: 1rem 2rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
+ 
+/* Header Styling */
+header {
+      background-color: #0b0d23;
+      color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
 
-.website-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.website-header .logo a {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #f8d90f;
-  text-decoration: none;
-}
+    .logo a {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f8d90f;
+      text-decoration: none;
+    }
 
-.navbar {
-  display: flex;
-}
+    /* Navigation Menu */
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
 
-.nav-menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
 
-.nav-menu li {
-  margin: 0 1rem;
-}
+    .nav-menu li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
 
-.nav-menu li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
+    .nav-menu li a:hover {
+      color: #f8d90f;
+    }
 
-.nav-menu li a:hover {
-  color: #f8d90f;
-}
-
-/* Mobile Menu Toggle */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-  /* Responsive Header */
-  .menu-toggle {
+    /* Mobile Menu Button */
+    .menu-toggle {
       display: none;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: #fff;
       cursor: pointer;
     }
 
+    /* Responsive Design */
     @media (max-width: 768px) {
-      header nav {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
         display: none;
         flex-direction: column;
         background-color: #1a1c33;
@@ -87,17 +82,20 @@
         top: 100%;
         left: 0;
         width: 100%;
-        padding: 1rem 2rem;
+        padding: 1rem 0;
+        gap: 0;
       }
 
-      header nav.active {
+      .nav-menu.active {
         display: flex;
       }
 
-      .menu-toggle {
-        display: block;
+      .nav-menu li {
+        text-align: center;
+        margin: 0.5rem 0;
       }
     }
+    
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -105,16 +103,7 @@
       background-color: #0b0d23;
     }
 
-    header {
-      background-color: #1a1c33;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      color: #f8d90f;
-    }
-
+    
     section {
       padding: 4rem 2rem;
       text-align: center;
@@ -215,10 +204,11 @@
 <body>
   <!--                                                     header                                         -->
                                                      <!-- Header Section -->
-<header class="website-header">
+ <!-- Header -->
+ <header>
   <div class="container">
     <div class="logo">
-      <a href="index.html">Superlative Coders</a>
+      <a href="#">Superlative Coders</a>
     </div>
     <nav class="navbar">
       <ul class="nav-menu">
@@ -230,17 +220,14 @@
         <li><a href="contact.html">Contact</a></li>
         <li><a href="privacy.html">Privacy Policy</a></li>
       </ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
     </nav>
-    <div class="menu-toggle" id="mobile-menu">
-      <i class="fas fa-bars"></i>
-    </div>
   </div>
 </header>
- 
-
-
   <section  >
-    <h1>Our Services</h1>
+    <h1 style="color: #f8d90f;font-size: 3rem;">Our Services</h1>
     <p>Discover what Superlative Coders can do for you.</p>
     <div class="services">
       <div class="service">
@@ -299,6 +286,13 @@
     <p>&copy; 2024 Superlative Coders. All rights reserved.</p>
   </div>
 </footer>
+<script>
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navMenu = document.querySelector(".nav-menu");
 
+  mobileMenu.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
 </body>
 </html>

@@ -7,79 +7,84 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
- /*                                                        header                                                  */
- /* Header Section */
-.website-header {
-  background-color: #0b0d23;
-  color: #fff;
-  padding: 1rem 2rem;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
+  /* General Reset */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.website-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+    }
 
-.website-header .logo a {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #f8d90f;
-  text-decoration: none;
-}
+    /* Header Styling */
+    header {
+      background-color: #0b0d23;
+      color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
 
-.navbar {
-  display: flex;
-}
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.nav-menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    .logo a {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f8d90f;
+      text-decoration: none;
+    }
 
-.nav-menu li {
-  margin: 0 1rem;
-}
+    /* Navigation Menu */
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
 
-.nav-menu li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
 
-.nav-menu li a:hover {
-  color: #f8d90f;
-}
+    .nav-menu li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
 
-/* Mobile Menu Toggle */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #fff;
-}
+    .nav-menu li a:hover {
+      color: #f8d90f;
+    }
 
-  /* Responsive Header */
-  .menu-toggle {
+    /* Mobile Menu Button */
+    .menu-toggle {
       display: none;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       color: #fff;
       cursor: pointer;
     }
 
+    /* Responsive Design */
     @media (max-width: 768px) {
-      header nav {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
         display: none;
         flex-direction: column;
         background-color: #1a1c33;
@@ -87,15 +92,17 @@
         top: 100%;
         left: 0;
         width: 100%;
-        padding: 1rem 2rem;
+        padding: 1rem 0;
+        gap: 0;
       }
 
-      header nav.active {
+      .nav-menu.active {
         display: flex;
       }
 
-      .menu-toggle {
-        display: block;
+      .nav-menu li {
+        text-align: center;
+        margin: 0.5rem 0;
       }
     }
 
@@ -110,12 +117,14 @@
     /* Hero Section */
     .hero {
       height: 100vh;
-      background: url(seo-optimization-modern-tech-php-syntax-highlighted-writing-programming-functions-laptop-big-data-internet-things-trend_372999-535.avif) no-repeat center center/cover;
+      background: url(output-onlinepngtools.png) no-repeat center center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
       padding: 0 2rem;
+      
+      
     }
 
     .hero h1 {
@@ -291,120 +300,119 @@
   </style>
 </head>
 <body>
-<!--                                                     header                                         -->
-                                                     <!-- Header Section -->
-<header class="website-header">
-    <div class="container">
-      <div class="logo">
-        <a href="index.html">Superlative Coders</a>
-      </div>
-      <nav class="navbar">
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-        </ul>
-      </nav>
+ <!-- Header -->
+ <header>
+  <div class="container">
+    <div class="logo">
+      <a href="#">Superlative Coders</a>
+    </div>
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
       <div class="menu-toggle" id="mobile-menu">
         <i class="fas fa-bars"></i>
       </div>
-    </div>
-  </header>
-  
-  <!-- Hero Section -->
-  <section class="hero">
-    <div>
-      <h1>Welcome to Superlative Coders</h1>
-      <p>We create stunning websites, exceptional UI/UX designs, and captivating graphics tailored for you.</p>
-      <a href="#services">Explore Our Services</a>
-    </div>
-  </section>
+    </nav>
+  </div>
+</header>
 
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <p>Explore the cutting-edge services we offer to help you succeed in the digital world.</p>
-    <div class="services">
-      <div class="service">
-        <i class="fas fa-code"></i>
-        <h3>Website Development</h3>
-        <p>Build responsive and high-performance websites that stand out.</p>
-      </div>
-      <div class="service">
-        <i class="fas fa-paint-brush"></i>
-        <h3>UI/UX Design</h3>
-        <p>Create seamless user experiences with innovative and user-friendly designs.</p>
-      </div>
-      <div class="service">
-        <i class="fas fa-image"></i>
-        <h3>Graphic Design</h3>
-        <p>Design visually stunning graphics that capture your audience's attention.</p>
-      </div>
-    </div>
-  </section>
+<!-- Hero Section -->
+<section class="hero">
+  <div>
+    <h1>Welcome to Superlative Coders</h1>
+    <p>We create stunning websites, exceptional UI/UX designs, and captivating graphics tailored for you.</p>
+    <a href="#services">Explore Our Services</a>
+  </div>
+</section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2>Our Portfolio</h2>
-    <p>Take a look at some of our recent projects and see what we can do for you.</p>
-    <div class="portfolio-gallery">
-      <div class="portfolio-item">
-        <img src="project 1.png" alt="Project 1">
-      </div>
-      <div class="portfolio-item">
-        <img src="project 2.png" alt="Project 2">
-      </div>
-      <div class="portfolio-item">
-        <img src="project 3.png" alt="Project 3">
-      </div>
+<!-- Services Section -->
+<section id="services">
+  <h2>Our Services</h2>
+  <p>Explore the cutting-edge services we offer to help you succeed in the digital world.</p>
+  <div class="services">
+    <div class="service">
+      <i class="fas fa-code"></i>
+      <h3>Website Development</h3>
+      <p>Build responsive and high-performance websites that stand out.</p>
     </div>
-  </section>
-  <!-- footer> -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-section">
-        <h3>About Us</h3>
-        <p>We are committed to delivering quality content and services to our users.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="privacy.html">Privacy Policy</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Follow Us</h3>
-        <ul class="social-icons">
-          <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-        </ul>
-      </div>
+    <div class="service">
+      <i class="fas fa-paint-brush"></i>
+      <h3>UI/UX Design</h3>
+      <p>Create seamless user experiences with innovative and user-friendly designs.</p>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 Superlative Coders. All rights reserved.</p>
+    <div class="service">
+      <i class="fas fa-image"></i>
+      <h3>Graphic Design</h3>
+      <p>Design visually stunning graphics that capture your audience's attention.</p>
     </div>
-  </footer>
-  
+  </div>
+</section>
 
-  <!-- Call to Action Section -->
-  <section class="cta">
-    <h2>Let's Build Something Great Together</h2>
-    <a href="contact.html">Contact Us</a>
-  </section>
+<!-- Portfolio Section -->
+<section id="portfolio">
+  <h2>Our Portfolio</h2>
+  <p>Take a look at some of our recent projects and see what we can do for you.</p>
+  <div class="portfolio-gallery">
+    <div class="portfolio-item">
+      <img src="project 1.png" alt="Project 1">
+    </div>
+    <div class="portfolio-item">
+      <img src="project 2.png" alt="Project 2">
+    </div>
+    <div class="portfolio-item">
+      <img src="project 3.png" alt="Project 3">
+    </div>
+  </div>
+</section>
+<!-- footer> -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>About Us</h3>
+      <p>We are committed to delivering quality content and services to our users.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <ul class="social-icons">
+        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Superlative Coders. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- Call to Action Section -->
+<section class="cta">
+  <h2>Let's Build Something Great Together</h2>
+  <a href="contact.html">Contact Us</a>
+</section>
 <script>
-    const mobileMenu = document.getElementById("mobile-menu");
-    const navMenu = document.querySelector(".nav-menu");
-  
-    mobileMenu.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
-    });
-  </script>
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navMenu = document.querySelector(".nav-menu");
+
+  mobileMenu.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
 </body>
 </html>

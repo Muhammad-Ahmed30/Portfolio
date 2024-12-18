@@ -12,33 +12,173 @@
       background-color: #0b0d23;
       color: #fff;
     }
-
     header {
       background-color: #1a1c33;
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    header .logo {
+    .logo {
       font-size: 1.5rem;
       font-weight: bold;
       color: #f8d90f;
     }
 
-    header nav a {
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
       color: #fff;
       text-decoration: none;
       margin: 0 1rem;
       font-size: 1rem;
+      transition: color 0.3s;
     }
 
-    header nav a:hover {
+    nav a:hover {
       color: #f8d90f;
     }
 
- 
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #fff;
+      background-color: #1a1c33;
+      border: none;
+      outline: none;
+      padding: 0.5rem;
+      border-radius: 4px;
+    }
+
+    .menu-toggle .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: #fff;
+      transition: 0.3s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #1a1c33;
+        width: 100%;
+        padding: 1rem 0;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav.active {
+        display: flex;
+      }
+    }
+/* Header Styling
+header {
+      background-color: #0b0d23;
+      color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo a {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f8d90f;
+      text-decoration: none;
+    }
+
+    /* Navigation Menu */
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    .nav-menu li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-menu li a:hover {
+      color: #f8d90f;
+    }
+
+    /* Mobile Menu Button */
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #1a1c33;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        gap: 0;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu li {
+        text-align: center;
+        margin: 0.5rem 0;
+      }
+    } */
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -142,24 +282,31 @@
 </head>
 <body>
 
-<header>
-  <div class="logo">Superlative Coders</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="team.html">Team</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy Policy</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo">Superlative Coders</div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </nav>
+  </header>
 
+<section class="container">
 <div class="container">
   <div class="page-title">
     <h1>Meet Our Team</h1>
     <p>The passionate professionals behind Superlative Coders.</p>
   </div>
+</section>
 
   <div class="team">
     <div class="team-member">
@@ -217,5 +364,11 @@
   </footer>
   
 
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      const nav = document.getElementById('nav-menu');
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
